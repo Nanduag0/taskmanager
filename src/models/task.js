@@ -1,35 +1,35 @@
-const express=require('express')
-const app=express()
-const mongoose=require('mongoose')
-const validator=require('validator')
+const express = require('express')
+const app = express()
+const mongoose = require('mongoose')
+const validator = require('validator')
 mongoose.connect(process.env.MONGODB_URL,
-{
- useNewUrlParser:true,
- useCreateIndex:true
+  {
+    useNewUrlParser: true,
+    useCreateIndex: true
 
-})
-const taskSchema =new mongoose.Schema({
-    name:
+  })
+const taskSchema = new mongoose.Schema({
+  name:
 {
-    type:String,
-    required:true
+  type: String,
+  required: true
 },
-rollno :
+  rollno:
 {
-    type:Number,
-    required:true
+  type: Number,
+  required: true
 },
-owner :
+  owner:
 {
-    type: mongoose.Schema.Types.ObjectId,
-    required:true,
-    ref:'User'
-    
+  type: mongoose.Schema.Types.ObjectId,
+  required: true,
+  ref: 'User'
+
 }
 },
 {
-    timestamps:true
+  timestamps: true
 
 })
-const Task= mongoose.model('Task',taskSchema)
-module.exports=Task 
+const Task = mongoose.model('Task', taskSchema)
+module.exports = Task
