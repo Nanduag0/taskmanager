@@ -28,25 +28,25 @@ User.findByIdAndDelete('5ecfa1e3004ccc65f0ee28e7',{age: 2}).then((user)=>
 */
 
 const updateAgeAndCount = async (id, age) => {
-  const user = await User.findByIdAndUpdate(id, { age })
-  const count = await User.countDocuments({ age })
-  return count
+    const user = await User.findByIdAndUpdate(id, { age })
+    const count = await User.countDocuments({ age })
+    return count
 }
 updateAgeAndCount('5ecf68d49cbe6033088c515d', 87).then((count) => {
-  console.log(count)
+  	console.log(count)
 }).catch((e) => {
-  console.log(e)
+  	console.log(e)
 })
 
 const deleteUserAndCount = async (id, name) => {
-  const user = await User.findByIdAndDelete(id, { name })
-  const count = await User.countDocuments({ name })
-  return count
+	const user = await User.findByIdAndDelete(id, { name })
+	const count = await User.countDocuments({ name })
+	return count
 }
 deleteUserAndCount('5ecf73ec543960357cfd9dfa', 'Nandini').then((count) => {
-  console.log(count)
+  	console.log(count)
 }).catch((e) => {
-  console.log(e)
+  	console.log(e)
 })
 
 /* const doworkpromise=new Promise((resolve,reject) =>
