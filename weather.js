@@ -6,13 +6,13 @@ const obj = require('./objects')
 const geocodeurl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoibmFuZHVhZzAiLCJhIjoiY2thOGQyMnJxMGJ6YzJzcDQ5dXAydDFjdiJ9.EyOD6IRaaeuPJO2Bte3eyw'
 
 request({ url: geocodeurl, json: true }, (error, response) => {
-  const latitude = response.body.features[0].center[1]
-  const longitude = response.body.features[0].center[0]
-  console.log(latitude, longitude)
+	const latitude = response.body.features[0].center[1]
+	const longitude = response.body.features[0].center[0]
+	console.log(latitude, longitude)
 })
 
 request({ url: url, json: true }, (error, response) => {
-  console.log(response.body.current.weather_descriptions[0] + '. degrees out there.There is a ' + response.body.current.feelslike + '%  degrees out.')
+  	console.log(response.body.current.weather_descriptions[0] + '. degrees out there.There is a ' + response.body.current.feelslike + '%  degrees out.')
 })
 
 /* geocode=(address,callback)=>
@@ -49,6 +49,6 @@ const add=(a,b,callback)=>
  }); */
 
 geocode('Boston', (error, data) => {
-  console.log('Error', error)
-  console.log('Data', data)
+	console.log('Error', error)
+	console.log('Data', data)
 })
